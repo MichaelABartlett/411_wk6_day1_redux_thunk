@@ -11,10 +11,12 @@ const Import = (props) => {
             <Button variant="contained" color="primary" onClick={() => props.fetchMakes()}>
                 Import
             </Button>
-            <Button  variant="contained" color="primary" onClick={() => console.log(props.makes)}>
-                Making props.makes in Import components easy to see
-            </Button>
-            <CustomTable makes={props.makes}/>
+            {/* below I am proving that props.deleteMake function is getting here */}
+            {/* <Button  variant="contained" color="primary" onClick={() => console.log(props.deleteMake)}>
+                {`using button to check different props: ${props.makes.length}`}
+            </Button> */}
+            <h2>Count: {props.makes.length}</h2>
+            <CustomTable makes={props.makes} deleteMake={props.deleteMake}/>
         </div>
 
     )

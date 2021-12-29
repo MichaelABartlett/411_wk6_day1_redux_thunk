@@ -9,12 +9,14 @@ import { MoreVert } from '@material-ui/icons';
 
 
 
-export function SimpleMenu(props) {
+export function SimpleMenu(props, index) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -32,17 +34,9 @@ export function SimpleMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={(index) => props.deleteMake(index)}>Delete this car, it is not a truck so it need to go</MenuItem>
+        <MenuItem onClick={() => props.deleteMake(index)}>Delete this car, it is not a truck so it need to go</MenuItem>
+        <MenuItem onClick={() => console.log(props.makes)}>Using to console.log props.makes or whatever I need</MenuItem>
       </Menu>
     </div>
   );
 }
-
-// {() => props.deleteMake(console.log('props in delete', props))}
-
-
-
-// useEffect(() => {
-//     console.log('use effect running on change of makes state at render', props.makes)
-//         }, [props.makes])
-

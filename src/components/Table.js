@@ -38,7 +38,7 @@ export function CustomTable(props) {
             <TableRow key={row.MakeId}>
               <TableCell component="th" scope="row">{row.MakeId}</TableCell>
               <TableCell>{row.MakeName}</TableCell>
-              <TableCell  align="right">{<SimpleMenu makes={props.makes} index={index} />}</TableCell>
+              <TableCell  align="right">{<SimpleMenu makes={props.makes} index={index} deleteMake={props.deleteMake}/>}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -46,3 +46,4 @@ export function CustomTable(props) {
     </TableContainer>
   );
 }
+
