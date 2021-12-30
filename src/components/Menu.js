@@ -9,7 +9,7 @@ import { MoreVert } from '@material-ui/icons';
 
 
 
-export function SimpleMenu(props, index) {
+export function SimpleMenu(props, idx) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -34,7 +34,7 @@ export function SimpleMenu(props, index) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => props.deleteMake(index)}>Delete this car, it is not a truck so it need to go</MenuItem>
+        <MenuItem onClick={() => props.deleteMake(idx)}>Delete this car, it is not a truck so it need to go</MenuItem>
         <MenuItem onClick={() => console.log(props.makes)}>Using to console.log props.makes or whatever I need</MenuItem>
       </Menu>
     </div>
